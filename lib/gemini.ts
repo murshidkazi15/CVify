@@ -3,7 +3,7 @@ import { GoogleGenAI } from '@google/genai';
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function generateCVVersions(text: string) {
-    const prompt = `You are an expert resume writer, recruiter, and brutally honest translator.
+    const prompt = `You are an elite resume strategist writing for top-tier candidates and a brutally honest translator.
 Create EXTREME contrast between the two CV bullet point versions.
 
 User input: "${text}"
@@ -14,22 +14,23 @@ Return ONLY valid JSON in this exact format:
   "honest": "..."
 }
 
-Rules for Professional:
-- natural and context-aware
-- varied in wording (avoid repetitive corporate buzzwords)
-- specific to the type of task described
-- clear and concise
-- professional but not exaggerated
-- IMPORTANT 1: DO NOT overuse the same verbs like "spearheaded", "leveraged", "optimized", "facilitated"
-- IMPORTANT 2: Choose verbs and phrasing based on context (teaching -> explained, guided; teamwork -> collaborated, contributed; operations -> handled, managed; technical -> built, improved; communication -> responded, clarified).
-- IMPORTANT 3: Avoid generic filler like "driving results", "enhancing performance", "dynamic environment".
-- IMPORTANT 4: Keep it to ONE clean sentence (12–18 words).
-- IMPORTANT 5: Make it sound like a REAL resume bullet written by a human. Vary sentence structure.
+Rules for Professional (Elite High-Impact Mode):
+- Goal: Make the candidate sound exceptionally capable, strategic, and high-performing — even if the original task is simple.
+- Use advanced, industry-relevant terminology where appropriate.
+- Use strong, varied action verbs (avoid repetition).
+- Add structured complexity to the sentence (layered phrasing) and include implied impact (efficiency, performance, reliability, outcomes).
+- Expand simple actions into higher-level contributions (strategy, coordination, optimization, execution).
+- Keep it to ONE sentence. Maintain credibility — do NOT fabricate unrealistic claims (no fake numbers or impossible scale).
+- Vary sentence structure and vocabulary across generations.
+- Style: Sophisticated, polished, slightly dense. Reads like top-tier consulting / investment banking / technical operations CV.
+- Avoid generic filler like "results-driven" or "dynamic environment". Avoid repeating words like "leveraged", "optimized", "spearheaded" too frequently. Prefer context-specific wording over generic corporate buzzwords.
+- Structure Guideline: [Advanced Action Verb] + [Expanded interpretation of task] + [how/with what] + [strategic or operational impact]
 
 Examples for Professional:
-* "helped my friend with homework" -> "Guided a peer through academic material, helping clarify concepts and improve understanding."
-* "ran instagram page" -> "Managed an Instagram account, creating content and maintaining consistent audience engagement."
-* "organized an event" -> "Coordinated event logistics, ensuring smooth execution and clear communication across participants."
+* "helped my friend with homework" -> "Provided structured academic support by deconstructing complex concepts and reinforcing problem-solving approaches to improve comprehension."
+* "ran instagram page" -> "Oversaw social media operations, developing and executing content strategies to enhance audience engagement and platform growth."
+* "technical operations internship" -> "Supported core technical operations by contributing to infrastructure oversight and assisting in maintaining system stability and performance continuity."
+* "answered emails" -> "Managed inbound communications, ensuring timely and accurate responses to support operational coordination and stakeholder alignment."
 
 Rules for Honest (Brutal Mode):
 - Tone: Extremely honest, blunt, savage, funny, realistic.
