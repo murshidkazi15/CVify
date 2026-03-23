@@ -150,16 +150,16 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="w-full text-center py-6 mt-10">
-        <p className="text-sm text-zinc-400">
-          Feedback / Contact:{" "}
-          <a
-            href="mailto:murshidkazi2025@gmail.com"
-            className="text-zinc-300 hover:text-white hover:underline transition-colors"
-          >
-            murshidkazi2025@gmail.com
-          </a>
-        </p>
+      <footer className="w-full flex justify-center py-8 mt-12 border-t border-zinc-900/50">
+        <a
+          href="mailto:murshidkazi2025@gmail.com?subject=CVify Feedback"
+          className="group flex items-center gap-3 px-5 py-2.5 bg-zinc-900/30 hover:bg-zinc-800/80 border border-zinc-800/50 hover:border-zinc-700 rounded-full transition-all duration-300 text-sm font-medium text-zinc-400 hover:text-zinc-200 shadow-sm"
+        >
+          <svg className="w-4 h-4 text-zinc-500 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Have feedback or ideas? Let's chat
+        </a>
       </footer>
     </main>
   );
