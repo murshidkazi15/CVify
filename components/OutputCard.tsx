@@ -33,10 +33,13 @@ export default function OutputCard({ title, output, onRegenerate, type }: Output
         ? 'hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]'
         : 'hover:border-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]';
 
+    // Apply tighter width constraints for Honest output to restrict words per line visually
+    const textWidthClass = isPro ? '' : 'sm:max-w-[28ch] tracking-tight leading-snug';
+
     return (
         <div className={`p-8 bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl flex flex-col gap-6 w-full animate-in fade-in slide-in-from-bottom-4 duration-500 transition-all ${glowBorderClass}`}>
             <div className={`${titleColor} text-sm font-bold uppercase tracking-wider`}>{title}</div>
-            <p className={`text-3xl ${textColor} font-medium leading-relaxed`}>
+            <p className={`text-3xl ${textColor} font-medium ${textWidthClass}`}>
                 {output}
             </p>
             <div className="flex gap-4 pt-4 border-t border-zinc-800">
